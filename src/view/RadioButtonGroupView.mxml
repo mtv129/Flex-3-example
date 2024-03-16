@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:RadioButtonGroup id="radioGroup"/>
+    
+    <mx:RadioButton label="Option 1" groupName="radioGroup"/>
+    <mx:RadioButton label="Option 2" groupName="radioGroup"/>
+    <mx:RadioButton label="Option 3" groupName="radioGroup"/>
+
+</mx:Application>

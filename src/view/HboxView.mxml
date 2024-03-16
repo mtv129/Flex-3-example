@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+
+        <mx:Button label="Button 1"/>
+        <mx:Button label="Button 2"/>
+        <mx:Button label="Button 3"/>
+
+    </mx:HBox>
+
+</mx:Application>

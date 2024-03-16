@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="100%" height="100%">
+
+    <mx:ArrayCollection id="chartData">
+        <mx:Object month="Jan" sales="2000" expenses="1500"/>
+        <mx:Object month="Feb" sales="2200" expenses="1600"/>
+        <mx:Object month="Mar" sales="2500" expenses="1700"/>
+        <mx:Object month="Apr" sales="2600" expenses="1800"/>
+        <mx:Object month="May" sales="3000" expenses="1900"/>
+    </mx:ArrayCollection>
+
+    <mx:AreaChart id="myChart" dataProvider="{chartData}" width="100%" height="100%">
+        <mx:horizontalAxis>
+            <mx:CategoryAxis categoryField="month"/>
+        </mx:horizontalAxis>
+        <mx:series>
+            <mx:AreaSeries yField="sales" displayName="Sales"/>
+            <mx:AreaSeries yField="expenses" displayName="Expenses"/>
+        </mx:series>
+    </mx:AreaChart>
+
+</mx:Application>

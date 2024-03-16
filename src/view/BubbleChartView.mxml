@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="100%" height="100%">
+
+    <mx:ArrayCollection id="chartData">
+        <mx:Object xValue="10" yValue="20" radiusValue="15"/>
+        <mx:Object xValue="20" yValue="30" radiusValue="20"/>
+        <mx:Object xValue="15" yValue="25" radiusValue="10"/>
+        <mx:Object xValue="25" yValue="35" radiusValue="25"/>
+        <mx:Object xValue="30" yValue="40" radiusValue="30"/>
+    </mx:ArrayCollection>
+
+    <mx:BubbleChart id="myChart" dataProvider="{chartData}" width="100%" height="100%">
+        <mx:horizontalAxis>
+            <mx:LinearAxis/>
+        </mx:horizontalAxis>
+        <mx:verticalAxis>
+            <mx:LinearAxis/>
+        </mx:verticalAxis>
+        <mx:series>
+            <mx:BubbleSeries xField="xValue" yField="yValue" radiusField="radiusValue"/>
+        </mx:series>
+    </mx:BubbleChart>
+
+</mx:Application>

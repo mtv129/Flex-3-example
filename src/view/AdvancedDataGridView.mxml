@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:Script>
+        <![CDATA[
+            import mx.collections.ArrayCollection;
+            import mx.controls.Alert;
+            import mx.events.ListEvent;
+
+            // Sample data for the AdvancedDataGrid
+            [Bindable]
+            private var employeeData:ArrayCollection = new ArrayCollection([
+                { EmployeeID: 1, Name: "John Doe", Department: "Engineering", Salary: 75000 },
+                { EmployeeID: 2, Name: "Jane Smith", Department: "Marketing", Salary: 65000 },
+                { EmployeeID: 3, Name: "Alice Johnson", Department: "HR", Salary: 60000 }
+            ]);
+
+            // Function to handle item click event
+            private function itemClickHandler(event:ListEvent):void {
+                var selectedItem:Object = myADG.selectedItem;
+                if (selectedItem != null) {
+                    Alert.show("Selected Employee: " + selectedItem.Name);
+                }
+            }
+        ]]>
+    </mx:Script>
+
+    <mx:Panel title="Employee Information" width="80%" height="80%" paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10">
+        <mx:AdvancedDataGrid id="myADG" width="100%" height="100%" dataProvider="{employeeData}" itemClick="itemClickHandler(event)">
+            <mx:columns>
+                <mx:AdvancedDataGridColumn headerText="Employee ID" dataField="EmployeeID"/>
+                <mx:AdvancedDataGridColumn headerText="Name" dataField="Name"/>
+                <mx:AdvancedDataGridColumn headerText="Department" dataField="Department"/>
+                <mx:AdvancedDataGridColumn headerText="Salary" dataField="Salary"/>
+            </mx:columns>
+        </mx:AdvancedDataGrid>
+    </mx:Panel>
+
+</mx:Application>

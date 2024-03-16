@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical"  width="100%" height="100%">
+
+    <mx:Script>
+        <![CDATA[
+        	import mx.controls.Alert;
+        
+            private function buttonClickHandler():void {
+                Alert.show("Button clicked!");
+            }
+        ]]>
+    </mx:Script>
+
+    <mx:Button label="Click me!" click="buttonClickHandler()"/>
+
+</mx:Application>

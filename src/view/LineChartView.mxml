@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:ArrayCollection id="chartData">
+        <mx:Object month="January" value="100"/>
+        <mx:Object month="February" value="150"/>
+        <mx:Object month="March" value="200"/>
+    </mx:ArrayCollection>
+
+    <mx:LineChart id="myChart" dataProvider="{chartData}" width="80%" height="80%">
+        <mx:horizontalAxis>
+            <mx:CategoryAxis dataProvider="{chartData}" categoryField="month"/>
+        </mx:horizontalAxis>
+        <mx:verticalAxis>
+            <mx:LinearAxis/>
+        </mx:verticalAxis>
+        <mx:series>
+            <mx:LineSeries displayName="Sales" xField="month" yField="value"/>
+        </mx:series>
+    </mx:LineChart>
+
+</mx:Application>

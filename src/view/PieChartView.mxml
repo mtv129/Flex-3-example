@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:ArrayCollection id="pieChartData">
+        <mx:Object category="Category 1" value="30"/>
+        <mx:Object category="Category 2" value="40"/>
+        <mx:Object category="Category 3" value="20"/>
+    </mx:ArrayCollection>
+
+    <mx:PieChart id="myPieChart" dataProvider="{pieChartData}" width="80%" height="80%">
+        <mx:series>
+            <mx:PieSeries field="value" labelField="category"/>
+        </mx:series>
+    </mx:PieChart>
+
+</mx:Application>

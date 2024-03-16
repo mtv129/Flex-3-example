@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="100%" height="100%">
+    <mx:Script>
+        <![CDATA[
+            import mx.collections.ArrayCollection;
+            
+            [Embed(source="assets/Logo.png")]
+            public const flexLogo:Class;
+            
+            [Embed(source="assets/icons/AdvancedDataGrid.png")]
+            public const advancedDataGridIcon:Class;
+            [Embed(source="assets/icons/Accordion.png")]
+            public const accordionIcon:Class;
+            [Embed(source="assets/icons/AreaChart.png")]
+            public const areaChartIcon:Class;
+            [Embed(source="assets/icons/BarChart.png")]
+            public const barChartIcon:Class;
+            [Embed(source="assets/icons/BubbleChart.png")]
+            public const bubbleChartIcon:Class;
+            [Embed(source="assets/icons/Button.png")]
+            public const buttonIcon:Class;
+            [Embed(source="assets/icons/ButtonBar.png")]
+            public const buttonBarIcon:Class;
+            [Embed(source="assets/icons/CandlestickChart.png")]
+            public const candlestickChartIcon:Class;
+            [Embed(source="assets/icons/Canvas.png")]
+            public const canvasIcon:Class;
+            [Embed(source="assets/icons/CheckBox.png")]
+            public const checkBoxIcon:Class;
+            [Embed(source="assets/icons/ColorPicker.png")]
+            public const colorPickerIcon:Class;
+            [Embed(source="assets/icons/ColumnChart.png")]
+            public const columnChartIcon:Class;
+            [Embed(source="assets/icons/ComboBox.png")]
+            public const comboBoxIcon:Class;
+            [Embed(source="assets/icons/DataGrid.png")]
+            public const dataGridIcon:Class;
+            [Embed(source="assets/icons/DateChooser.png")]
+            public const dateChooserIcon:Class;
+            [Embed(source="assets/icons/DateField.png")]
+            public const dateFieldIcon:Class;
+            [Embed(source="assets/icons/Form.png")]
+            public const formIcon:Class;
+            [Embed(source="assets/icons/HBox.png")]
+            public const hBoxIcon:Class;
+            [Embed(source="assets/icons/HLOCChart.png")]
+            public const hLOCChartIcon:Class;
+            [Embed(source="assets/icons/HSlider.png")]
+            public const hSliderIcon:Class;
+            [Embed(source="assets/icons/Image.png")]
+            public const imageIcon:Class;
+            [Embed(source="assets/icons/Label.png")]
+            public const labelIcon:Class;
+            [Embed(source="assets/icons/Legend.png")]
+            public const legendIcon:Class;
+            [Embed(source="assets/icons/LineChart.png")]
+            public const lineChartIcon:Class;
+            [Embed(source="assets/icons/LinkBar.png")]
+            public const linkBarIcon:Class;
+            [Embed(source="assets/icons/LinkButton.png")]
+            public const linkButtonIcon:Class;
+            [Embed(source="assets/icons/List.png")]
+            public const listIcon:Class;
+            [Embed(source="assets/icons/MenuBar.png")]
+            public const menuBarIcon:Class;
+            [Embed(source="assets/icons/NumericStepper.png")]
+            public const numericStepperIcon:Class;
+            [Embed(source="assets/icons/Panel.png")]
+            public const panelIcon:Class;
+            [Embed(source="assets/icons/PieChart.png")]
+            public const pieChartIcon:Class;
+            [Embed(source="assets/icons/PlotChart.png")]
+            public const plotChartIcon:Class;
+            [Embed(source="assets/icons/ProgressBar.png")]
+            public const progressBarIcon:Class;
+            [Embed(source="assets/icons/RadioButton.png")]
+            public const radioButtonIcon:Class;
+            [Embed(source="assets/icons/RadioButtonGroup.png")]
+            public const radioButtonGroupIcon:Class;
+            [Embed(source="assets/icons/RichEditabletext.png")]
+            public const richEditabletextIcon:Class;
+            [Embed(source="assets/icons/Spacer.png")]
+            public const spacerIcon:Class;
+            [Embed(source="assets/icons/TabBar.png")]
+            public const tabBarIcon:Class;
+            [Embed(source="assets/icons/TabNavigator.png")]
+            public const tabNavIcon:Class;
+            [Embed(source="assets/icons/TextArea.png")]
+            public const textAreaIcon:Class;
+            [Embed(source="assets/icons/TextInput.png")]
+            public const textInputIcon:Class;
+            [Embed(source="assets/icons/TitleWindow.png")]
+            public const titleWindowIcon:Class;
+            [Embed(source="assets/icons/VBox.png")]
+            public const vBoxIcon:Class;
+            [Embed(source="assets/icons/Tree.png")]
+            public const treeIcon:Class;
+            [Embed(source="assets/icons/VDividedBox.png")]
+            public const vDividedBoxIcon:Class;
+            [Embed(source="assets/icons/VideoDisplay.png")]
+            public const videoDisplayIcon:Class;
+            
+            
+            
+            
+            
+            import mx.events.ListEvent;
+            import mx.controls.Label;
+            import view.AdvancedDataGridView;
+            import view.AccordionView;
+            import view.*;
+            
+            private function onTileListChange(event:ListEvent):void {
+                var selectedItem:Object = event.currentTarget.selectedItem;
+                
+                previewPanel.removeAllChildren();
+
+                switch(selectedItem.label) {
+                    case "AdvancedDataGrid":
+                        var advancedDataGridContent:AdvancedDataGridView = new AdvancedDataGridView();
+                        previewPanel.addChild(advancedDataGridContent);
+                        break;
+                    case "Accordion":
+                        var accordionContent:AccordionView = new AccordionView();
+                        previewPanel.addChild(accordionContent);
+                        break;
+                    case "AreaChart":
+                        var areChartContent:AreaChartView = new AreaChartView();
+                        previewPanel.addChild(areChartContent);
+                        break;
+                    case "BarChart":
+                    	var barChart:BarChartView = new BarChartView();
+                        previewPanel.addChild(barChart);
+                        break;
+                    case "BubbleChart":
+                    	var bubbleChart:BubbleChartView = new BubbleChartView();
+                        previewPanel.addChild(bubbleChart);
+                        break;
+                    case "Button":
+                    	var button:ButtonView = new ButtonView();
+                        previewPanel.addChild(button);
+                        break;
+                    case "ButtonBar":
+                    	var buttonBar:ButtonBarView = new ButtonBarView();
+                        previewPanel.addChild(buttonBar);
+                        break;
+                        CandlestickChart
+                    case "CandlestickChart":
+                    	var candlestickChart:CandlestickChartView = new CandlestickChartView();
+                        previewPanel.addChild(candlestickChart);
+                        break;
+                    case "Canvas":
+                    	var canvas:CanvasView = new CanvasView();
+                        previewPanel.addChild(canvas);
+                        break;
+                    case "CheckBox":
+                    	var checkBox:CheckBoxView = new CheckBoxView();
+                        previewPanel.addChild(checkBox);
+                        break;
+                    case "ColorPicker":
+                    	var colorPicker:ColorPickerView = new ColorPickerView();
+                        previewPanel.addChild(colorPicker);
+                        break;
+                    case "ColumnChart":
+                    	var columnChart:ColumnChartView = new ColumnChartView();
+                        previewPanel.addChild(columnChart);
+                        break;
+                    case "ComboBox":
+                    	var comboBox:ComboBoxView = new ComboBoxView();
+                        previewPanel.addChild(comboBox);
+                        break;
+                    case "DataGrid":
+                    	var dataGrid:DataGridView = new DataGridView();
+                        previewPanel.addChild(dataGrid);
+                        break;
+                    case "DateChooser":
+                    	var dataChooser:DataChooserView = new DataChooserView();
+                        previewPanel.addChild(dataChooser);
+                        break;
+                    case "DateField":
+                    	var dataField:DateFieldView = new DateFieldView();
+                        previewPanel.addChild(dataField);
+                        break;
+                    case "Form":
+                    	var form:FormView = new FormView();
+                        previewPanel.addChild(form);
+                        break;
+                    case "HBox":
+                    	var hBox:HboxView = new HboxView();
+                        previewPanel.addChild(hBox);
+                        break;
+                    case "HLOCChart":
+                    	var hLOCChart:HLOCChartView = new HLOCChartView();
+                        previewPanel.addChild(hLOCChart);
+                        break;
+                    case "HSlider":
+                    	var hSlider:HSliderView = new HSliderView();
+                        previewPanel.addChild(hSlider);
+                        break;
+                    case "Image":
+                    	var image:ImageView = new ImageView();
+                        previewPanel.addChild(image);
+                        break;
+                    case "Label":
+                    	var label:LabelView = new LabelView();
+                        previewPanel.addChild(label);
+                        break;
+                    case "Legend":
+                    	var legend:LegendView = new LegendView();
+                        previewPanel.addChild(legend);
+                        break;
+                    case "LineChart":
+                    	var lineChart:LineChartView = new LineChartView();
+                        previewPanel.addChild(lineChart);
+                        break;
+                    case "LinkBar":
+                    	var linkBar:LinkBarView = new LinkBarView();
+                        previewPanel.addChild(linkBar);
+                        break;
+                    case "LinkButton":
+                    	var linkButton:LinkButtonView = new LinkButtonView();
+                        previewPanel.addChild(linkButton);
+                        break;
+                    case "List":
+                    	var list:ListView = new ListView();
+                        previewPanel.addChild(list);
+                        break;
+                    case "MenuBar":
+                    	var menuBar:MenuBarView = new MenuBarView();
+                        previewPanel.addChild(menuBar);
+                        break;
+                    case "NumericStepper":
+                    	var numStep:NumericStepperView = new NumericStepperView();
+                        previewPanel.addChild(numStep);
+                        break;
+                    case "Panel":
+                    	var panel:PanelView = new PanelView();
+                        previewPanel.addChild(panel);
+                        break;
+                    case "PieChart":
+                    	var pieChart:PieChartView = new PieChartView();
+                        previewPanel.addChild(pieChart);
+                        break;
+                    case "PlotChart":
+                    	var plotChart:PlotChartView = new PlotChartView();
+                        previewPanel.addChild(plotChart);
+                        break;
+                    case "ProgressBar":
+                    	var progressBar:ProgressBarView = new ProgressBarView();
+                        previewPanel.addChild(progressBar);
+                        break;
+                    case "RadioButton":
+                    	var redio:RadioButtonView = new RadioButtonView();
+                        previewPanel.addChild(redio);
+                        break;
+                    case "RadioButtonGroup":
+                    	var radioGroup:RadioButtonGroupView = new RadioButtonGroupView();
+                        previewPanel.addChild(radioGroup);
+                        break;
+                    case "RichTextEditor":
+                    	var richText:RichEditableTextView = new RichEditableTextView();
+                        previewPanel.addChild(richText);
+                        break;
+                    case "Spacer":
+                    	var spacer:SpacerView = new SpacerView();
+                        previewPanel.addChild(spacer);
+                        break;
+                    case "TabBar":
+                    	var tabBar:TabBarView = new TabBarView();
+                        previewPanel.addChild(tabBar);
+                        break;
+                    case "TextArea":
+                    	var textArea:TextAreaView = new TextAreaView();
+                        previewPanel.addChild(textArea);
+                        break;
+                    case "TextInput":
+                    	var textInp:TextInputView = new TextInputView();
+                        previewPanel.addChild(textInp);
+                        break;
+                    case "TitleWindow":
+                    	var window:TitleWindowView = new TitleWindowView();
+                        previewPanel.addChild(window);
+                        break;
+                    case "Tree":
+                    	var tree:TreeView = new TreeView();
+                        previewPanel.addChild(tree);
+                        break;
+                    case "VBox":
+                    	var vBox:VBoxView = new VBoxView();
+                        previewPanel.addChild(vBox);
+                        break;
+                    case "VDividedBox":
+                    	var divBox:DividedBoxView = new DividedBoxView();
+                        previewPanel.addChild(divBox);
+                        break;
+                    case "TabNavigator":
+                    	var tabNav:TabNavigatorView = new TabNavigatorView();
+                        previewPanel.addChild(tabNav);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        ]]>
+    </mx:Script>
+
+    <mx:TileList change="onTileListChange(event)" id="CameraSelection" maxColumns="1" rowHeight="50" direction="horizontal" columnCount="1" rowCount="1" width="109" x="0" bottom="0" top="0" borderStyle="none">
+        <mx:dataProvider>
+            <mx:Array>
+            	<mx:Object label="AdvancedDataGrid" icon="{advancedDataGridIcon}"/>
+                <mx:Object label="Accordion" icon="{accordionIcon}"/>
+                <mx:Object label="AreaChart" icon="{areaChartIcon}"/>
+                <mx:Object label="BarChart" icon="{barChartIcon}"/>
+                <mx:Object label="BubbleChart" icon="{bubbleChartIcon}"/>
+                <mx:Object label="Button" icon="{buttonIcon}"/>
+                <mx:Object label="ButtonBar" icon="{buttonBarIcon}"/>
+                <mx:Object label="CandlestickChart" icon="{candlestickChartIcon}"/>
+                <mx:Object label="Canvas" icon="{canvasIcon}"/>
+                <mx:Object label="CheckBox" icon="{checkBoxIcon}"/>
+                <mx:Object label="ColorPicker" icon="{colorPickerIcon}"/>
+                <mx:Object label="ColumnChart" icon="{columnChartIcon}"/>
+                <mx:Object label="ComboBox" icon="{comboBoxIcon}"/>
+                <mx:Object label="DataGrid" icon="{dataGridIcon}"/>
+                <mx:Object label="DateChooser" icon="{dateChooserIcon}"/>
+                <mx:Object label="DateField" icon="{dateFieldIcon}"/>
+                <mx:Object label="Form" icon="{formIcon}"/>
+                <mx:Object label="HBox" icon="{hBoxIcon}"/>
+                <mx:Object label="HLOCChart" icon="{hLOCChartIcon}"/>
+                <mx:Object label="HSlider" icon="{hSliderIcon}"/>
+                <mx:Object label="Image" icon="{imageIcon}"/>
+                <mx:Object label="Label" icon="{labelIcon}"/>
+                <mx:Object label="Legend" icon="{legendIcon}"/>
+                <mx:Object label="LineChart" icon="{lineChartIcon}"/>
+                <mx:Object label="LinkBar" icon="{linkBarIcon}"/> 
+                <mx:Object label="LinkButton" icon="{linkButtonIcon}"/> 
+                <mx:Object label="List" icon="{listIcon}"/>
+                <mx:Object label="MenuBar" icon="{menuBarIcon}"/>
+				<mx:Object label="NumericStepper" icon="{numericStepperIcon}"/>
+                <mx:Object label="Panel" icon="{panelIcon}"/>
+                <mx:Object label="PieChart" icon="{pieChartIcon}"/>
+                <mx:Object label="PlotChart" icon="{plotChartIcon}"/>
+                <mx:Object label="ProgressBar" icon="{progressBarIcon}"/>
+                <mx:Object label="RadioButton" icon="{radioButtonIcon}"/>
+                <mx:Object label="RadioButtonGroup" icon="{radioButtonGroupIcon}"/>
+                <mx:Object label="RichTextEditor" icon="{richEditabletextIcon}"/>
+                <mx:Object label="Spacer" icon="{spacerIcon}"/>
+                <mx:Object label="TabBar" icon="{tabBarIcon}"/>
+                <mx:Object label="TabNavigator" icon="{tabNavIcon}"/>
+                <mx:Object label="TextArea" icon="{textAreaIcon}"/>
+                <mx:Object label="TextInput" icon="{textInputIcon}"/>
+                <mx:Object label="TitleWindow" icon="{titleWindowIcon}"/>
+                <mx:Object label="Tree" icon="{treeIcon}"/>
+                <mx:Object label="VBox" icon="{vBoxIcon}"/>
+                <mx:Object label="VDividedBox" icon="{vDividedBoxIcon}"/>
+            </mx:Array>
+        </mx:dataProvider>
+    </mx:TileList>
+    
+    <mx:Panel id="previewPanel" layout="absolute" left="108" right="0" bottom="0" top="0" title="Priview">
+    
+    <mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+
+        <mx:Panel id="welcomePanel" width="80%" height="80%" title="Welcome Screen">
+
+            <mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+
+                <mx:Label text="Welcome to Flex 3 example" fontSize="18" fontWeight="bold" />
+
+                <mx:Text text="Here you will see the work of many Flex 3 components, in the description you will see a link to the source code, go to the left and select the component that you want to see, there will be no big logic here, just the way the component works normally&#xa;" 
+                    textAlign="center" width="80%" />
+            </mx:VBox>
+        </mx:Panel>
+    </mx:VBox>
+    
+    </mx:Panel>
+    
+</mx:Application>

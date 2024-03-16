@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:Accordion width="80%" height="80%">
+        <mx:VBox label="Section 1" width="100%" height="100%">
+            <mx:Label text="Content for Section 1"/>
+        </mx:VBox>
+        <mx:VBox label="Section 2" width="100%" height="100%">
+            <mx:Label text="Content for Section 2"/>
+        </mx:VBox>
+        <mx:VBox label="Section 3" width="100%" height="100%">
+            <mx:Label text="Content for Section 3"/>
+        </mx:VBox>
+    </mx:Accordion>
+
+</mx:Application>

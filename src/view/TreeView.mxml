@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:Script>
+        <![CDATA[
+            import mx.collections.ArrayCollection;
+            [Bindable]
+            private var treeData:ArrayCollection = new ArrayCollection([
+                {label:"Parent 1", children:[
+                    {label:"Child 1.1"},
+                    {label:"Child 1.2"}
+                ]},
+                {label:"Parent 2", children:[
+                    {label:"Child 2.1"},
+                    {label:"Child 2.2"}
+                ]}
+            ]);
+        ]]>
+    </mx:Script>
+
+    <mx:Tree id="myTree" width="300" height="300" dataProvider="{treeData}" />
+
+</mx:Application>

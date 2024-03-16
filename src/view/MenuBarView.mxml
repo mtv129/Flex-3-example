@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+	<mx:Script>
+        <![CDATA[
+            import mx.collections.*;
+            import mx.controls.Alert;
+            import mx.events.MenuEvent;
+
+            [Bindable]
+            private var menubarXML:XMLList =
+                <>
+                    <menuitem label="Menu1" data="top">
+                        <menuitem label="MenuItem 1-A" data="1A"/>
+                        <menuitem label="MenuItem 1-B" data="1B"/>
+                    </menuitem>
+                    <menuitem label="Menu2" data="top">
+                        <menuitem label="MenuItem 2-A" type="check" data="2A"/>
+                        <menuitem type="separator"/>
+                        <menuitem label="MenuItem 2-B" >
+                            <menuitem label="SubMenuItem 3-A" type="radio"
+                                groupName="one" data="3A"/>
+                            <menuitem label="SubMenuItem 3-B" type="radio"
+                                groupName="one" data="3B"/>
+                        </menuitem>
+                    </menuitem>
+                </>;
+         ]]>
+    </mx:Script>
+
+    <mx:MenuBar labelField="@label" dataProvider="{menubarXML}" />
+
+</mx:Application>

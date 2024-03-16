@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:ArrayCollection id="plotChartData">
+        <mx:Object x="1" y1="5" y2="10" y3="15"/>
+        <mx:Object x="2" y1="10" y2="15" y3="20"/>
+        <mx:Object x="3" y1="15" y2="20" y3="25"/>
+    </mx:ArrayCollection>
+
+    <mx:PlotChart id="myPlotChart" dataProvider="{plotChartData}" width="80%" height="80%">
+        <mx:series>
+            <mx:PlotSeries xField="x" yField="y1"/>
+            <mx:PlotSeries xField="x" yField="y2"/>
+            <mx:PlotSeries xField="x" yField="y3"/>
+        </mx:series>
+    </mx:PlotChart>
+
+</mx:Application>

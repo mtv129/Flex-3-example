@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:ArrayCollection id="gridData">
+        <mx:Object name="John" age="30" city="New York"/>
+        <mx:Object name="Alice" age="25" city="Los Angeles"/>
+        <mx:Object name="Bob" age="35" city="Chicago"/>
+        <mx:Object name="Emily" age="28" city="San Francisco"/>
+    </mx:ArrayCollection>
+
+    <mx:DataGrid id="myDataGrid" width="100%" height="100%" dataProvider="{gridData}">
+        <mx:columns>
+            <mx:DataGridColumn headerText="Name" dataField="name"/>
+            <mx:DataGridColumn headerText="Age" dataField="age"/>
+            <mx:DataGridColumn headerText="City" dataField="city"/>
+        </mx:columns>
+    </mx:DataGrid>
+
+</mx:Application>

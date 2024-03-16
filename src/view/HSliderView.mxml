@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%">
+
+    <mx:HSlider id="myHSlider" minimum="0" maximum="100" value="50" width="80%" />
+
+</mx:Application>
